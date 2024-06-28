@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BroDay</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            let currentIndex = 0;
+            $(".sliderwrap").append($(".slider").first().clone(true));
+
+            setInterval(function(){
+                currentIndex++;
+                $(".sliderwrap").animate({marginLeft: -currentIndex * 100 + "%"}, 1200);
+                if (currentIndex == 3) {
+                    setTimeout(function(){
+                        $(".sliderwrap").animate({marginLeft: 0}, 0);
+                    }, 0);
+                    currentIndex = 0;
+                }
+            }, 5000);
+
+            // 메뉴바 링크에 대한 클릭 이벤트 핸들러 추가
+            $('#header nav a').click(function(e) {
+                e.preventDefault();
+                
+                var targetId = $(this).attr('href'); // 클릭된 링크의 href 값을 가져옴
+                
+                // 해당 섹션의 위치로 부드럽게 스크롤
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top
+                }, 800); // 스크롤 속도: 800ms
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo animate__animated animate__bounce animate__repeat-2 2	infinite">
+                <a href="#"><h1>BroDay</h1></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="animate__animated animate__fadein">
+                        <a href="#slider" class="animate__animated animate__fadeInUp animate__delay-0.5s	0.5s">MAIN</a>
+                    </li>
+                    <li>
+                        <a href="#con1" class="animate__animated animate__fadeInUp animate__delay-1s 1s">SKILL</a>
+                    </li>
+                    <li>
+                        <a href="#con2" class="animate__animated animate__fadeInUp animate__delay-2s 2s">PORTFOLIO</a>
+                    </li>
+                    <li>
+                        <a href="#slider" class="animate__animated animate__fadeInUp animate__delay-3s	3s">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- header -->
+
+        <div id="slider">
+
+            <div class="link">
+                <ul>
+                    <li><a href="https://www.youtube.com/@Broday7" target="_blank" class="animate__animated animate__backInLeft">Youtube ></a></li>
+                    <li><a href="https://www.instagram.com/hyeongday/?hl=ko" target="_blank" class="animate__animated animate__backInLeft">Instagram ></a></li>
+                </ul>
+            </div>
+            <div class="circle">
+                <img src="images/day600x600.png" alt="broday">
+            </div>
+            <div class="sliderwrap">
+                <div class="slider s1">
+                    <h1>안녕하세요.</h1><br>
+                    <h2>항상 새롭고 싶은 디자이너<br>BroDay입니다.</h2>
+                </div>
+                <div class="slider s2">
+                    <h1>뜨거운 심장으로</h1><br>
+                    <h2>끊임없이 배우고 발전하는<br>BroDay입니다.</h2>
+                </div>
+                <div class="slider s3">
+                    <h1>상상을 현실로!</h1><br>
+                    <h2>항상 성장하는 디자이너<br>BroDay입니다.</h2>
+                </div>
+            </div>
+        </div>
+        <!-- slider -->
+
+        <div id="con1">
+            <div class="con1">
+                <div class="con1-1">
+                    <a href="#" class="">SKILLS</a>
+                    <ul>
+                        <li>
+                            <a href="#">PHOTOSHOP</a>
+                            <div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>
+                        </li>
+                        <li>
+                            <a href="#">ILLUSTRATOR</a>
+                            <div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>
+                        </li>
+                        <li>
+                            <a href="#">AFTER EFFECT</a>
+                            <div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>
+                        </li>
+                        <li>
+                            <a href="#">HTML,CSS</a>
+                            <div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>
+                        </li>
+                        <li>
+                            <a href="#">EXCEL</a>
+                            <div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="gage"></div>&nbsp;&nbsp;<div class="blankgage"></div>&nbsp;&nbsp;<div class="blankgage"></div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="con1-2">
+                    <a href="#">LICENSE</a>
+                    <ul>
+                        <li><h2>2016</h2><a href="#">운전면허 1종보통</a></li>
+                        <li><h2>2021</h2><a href="#">포토샵 1급</a></li>
+                        <li><h2>2021</h2><a href="#">일러스트 1급</a></li>
+                        <li><h2>2022</h2><a href="#">컴퓨터활용능력 2급</a></li>
+                        <li><h2>2022</h2><a href="#">생활체육지도자2급</a></li>
+                        <li><h2>2023</h2><a href="#">지게차운전기능사</a></li>
+                        <li><h2>2024</h2><a href="#">웹디자인기능사</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- contents -->
+
+
+        <div id="footer">
+            <div class="footer1">
+                <h1>BroDay</h1>
+            </div>
+            <div class="footer2">
+                <h3>
+                    This page is designed as a personal portfolio that is not for commercial use.
+                    <br>
+                    @Copyright 2024 
+                </h3>
+                             
+            </div>
+            <div class="footer3">
+                <div class="footer3-1">
+                    <a href="https://www.instagram.com/hyeongday/?hl=ko" target="_blank" class="instalogo"><img src="images/insta.png" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@Broday7" target="_blank" class="youtubelogo"><img src="images/youtube.png" alt="Youtube"></a>
+                </div>
+                <div class="footer3-2">
+                    <select name="" id="">
+                        <option>Contact Me</option>
+                        <option value="1">Instagram</option>
+                        <option value="2"></a>Youtube</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+    </div>
+</body>
+</html>
